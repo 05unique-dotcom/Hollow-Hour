@@ -1,0 +1,32 @@
+[
+  {
+    "id": "old-well",
+    "title": "The Old Well",
+    "where": "Behind the old school, Kudal",
+    "told_by": "Sample story",
+    "terror": 4,
+    "sample": true,
+    "text": "Behind the old school there is a dry well that nobody uses. On new-moon nights, children who passed it heard someone drawing water, although the well had no rope and no bucket. An old watchman once followed the sound and found wet footprints leading to the well. The footprints went in, but none came out. He never walked that path after dark again.",
+    "whisper": "Don’t look back."
+  },
+  {
+    "id": "peepal-voice",
+    "title": "The Voice Under the Peepal",
+    "where": "The village road, third watch of the night",
+    "told_by": "Sample story",
+    "terror": 3,
+    "sample": true,
+    "text": "A huge peepal tree stands where the village road bends. Travellers coming home late say a woman’s voice calls them by name from under it. The voice always sounds like someone they love. A farmer once answered, and his lantern went out. He reached home by morning, but he never spoke of what he heard.",
+    "whisper": "It already knows your name."
+  },
+  {
+    "id": "locked-room",
+    "title": "The Locked Room",
+    "where": "An old family house",
+    "told_by": "Sample story",
+    "terror": 5,
+    "sample": true,
+    "text": "In an old family house there is a room that has been locked for as long as anyone remembers. Every night the latch lifts by itself and the door opens a hand’s width. The family tried nailing it shut, but the nails were found on the floor in the morning. Nobody knows what is inside, because nobody who looked inside would talk about it.",
+    "whisper": "You didn’t close the door."
+  }
+]

@@ -1,0 +1,9 @@
+{
+  "name": "hollow-hour",
+  "version": "1.0.0",
+  "description": "Ghost stories told by village elders. Ask the ghost; an open model answers only from the story.",
+  "main": "server.js",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=18" },
+  "dependencies": { "express": "^4.19.2" }
+}
