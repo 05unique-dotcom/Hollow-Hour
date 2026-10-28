@@ -13,7 +13,7 @@ function loadStories() {
   return JSON.parse(fs.readFileSync(path.join(__dirname, "stories.json"), "utf8"));
 }
 
-app.get("/", (_req, res) => res.sendFile(path.join(__dirname, "hollow-hour.html")));
+app.get("/", (_req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
 app.get("/api/stories", (_req, res) => {
   try {
