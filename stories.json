@@ -28,5 +28,45 @@
     "sample": true,
     "text": "In an old family house there is a room that has been locked for as long as anyone remembers. Every night the latch lifts by itself and the door opens a hand’s width. The family tried nailing it shut, but the nails were found on the floor in the morning. Nobody knows what is inside, because nobody who looked inside would talk about it.",
     "whisper": "You didn’t close the door."
+  },
+  {
+    "id": "seventh-lamp",
+    "title": "The Seventh Lamp",
+    "where": "The abandoned wada above the mango orchard",
+    "tag": "Original fiction, inspired by Konkan village tales",
+    "terror": 5,
+    "sample": false,
+    "text": "On the laterite hill above the mango orchard stands a wada that has been empty since 1952, when a fever took six children of the house in one monsoon. Six brass lamps still hang on its verandah, one for each child, and on every new-moon midnight they light themselves. The old keeper, Ganpat, taught the village one rule: count the flames. If a seventh lamp glows, someone in the village will die within seven days. In 1987 Ganpat counted seven, sold his cow, gave away his grain, and was dead on the sixth day, found sitting at the orchard gate with his hands folded. The seventh lamp is lit by the children’s mother, who calls whoever she has chosen. It can be turned away with a copper coin and a pinch of salt left on the threshold, and by saying the name of the lamp, never the name of the person. Never blow a lamp out. In 1994 a boy named Raghu blew out the seventh flame on a dare. The next new moon, the village counted seven lamps again, and the seventh flame was shaped like a boy.",
+    "whisper": "Count the flames."
+  },
+  {
+    "id": "green-saree",
+    "title": "The Woman in the Green Saree",
+    "where": "The tamarind road, the third watch of the night",
+    "tag": "Original fiction, inspired by Konkan village tales",
+    "terror": 4,
+    "sample": false,
+    "text": "On the tamarind road between the two villages, a woman in a green nine-yard saree walks at the third watch of the night, carrying an unlit lantern. She asks every traveller for a light. If you give her fire, she follows you home and sits on your roof until the next new moon, and your family hears her bangles every night. If you refuse, she steps in front of you, and the road bends back to where you started. A bullock-cart driver named Shivram refused her three times and drove the same bend for three nights. A priest told him the cure: give her a jasmine garland instead of fire, and walk on without looking back until the first cock crows. She waits because in 1961 she was to be married, but the groom’s cart overturned at that bend in the monsoon. She stood there with her lantern until she died, still waiting for them to arrive. The greatest danger is lighting her lantern. Whoever does becomes the one who waits on the road, and she walks on to her wedding at last.",
+    "whisper": "She asks for a light."
+  },
+  {
+    "id": "room-no-window",
+    "title": "The Room Without a Window",
+    "where": "An old tile-maker’s house",
+    "tag": "Original fiction, inspired by Konkan village tales",
+    "terror": 5,
+    "sample": false,
+    "text": "In a tile-maker’s house there is a room with no window and a door that has been shut since 1948. That year the grandfather’s younger brother, Anant, went in with a round brass mirror and never came out. Grandfather Dattoba locked the door and threw the key into the river. In 1963 a fisherman caught a fish with that same key inside it, and he returned it to the family, who buried it under the tulsi plant. Every night at ten past two the latch lifts by itself and the door opens a hand’s width, and from inside comes the sound of someone brushing long hair. The family tied a black thread across the door, and it holds all year, but it snaps on the new moon of Diwali, so they tie a fresh one before sunset. They have replaced it 78 times. If a voice from the room calls you in your brother’s voice, never answer. A girl once looked in at the mirror and saw a man standing behind her, though nobody was there. She left the house the same night and never spoke of it again.",
+    "whisper": "Someone is brushing their hair."
+  },
+  {
+    "id": "whistling-boatman",
+    "title": "The Whistling Boatman",
+    "where": "The creek, on a new-moon night",
+    "tag": "Original fiction, inspired by Konkan village tales",
+    "terror": 4,
+    "sample": false,
+    "text": "Fishermen on the creek follow one rule: never whistle on the water at night. A whistle calls the Boatman, a tall man in a wet black blanket who rows a boat without an oar and leaves no ripples behind it. He does not ask for money. His fare is one fish, the first one of the catch, thrown into his boat without speaking. If you pay him, he rows you to the far bank safely and fades into the mist. If you refuse, your own boat turns in circles until sunrise. A young fisherman named Bala whistled for fun in 1998 and paid the Boatman with a gold coin from his mother’s necklace. The Boatman smiled, took the coin, and did not row him to the bank. At dawn Bala’s boat was found floating empty with the gold coin lying in the water at the bottom. Since then the village leaves the first fish of every catch tied in a banana leaf on the shore on new-moon nights, so the Boatman never has to call for his fare.",
+    "whisper": "Do not whistle."
   }
 ]
