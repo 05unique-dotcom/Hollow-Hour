@@ -83,14 +83,14 @@ background:radial-gradient(circle closest-side,transparent 0,transparent 130px,#
 <div id="scare" aria-hidden="true"><svg id="face" viewBox="0 0 200 260"></svg></div>
 <div id="sig" aria-hidden="true">Signal lost…</div>
 <div class="hud" aria-hidden="true">Courage<div><i id="hb"></i></div></div>
-<button id="tg" aria-pressed="true">Torch on</button>
+<button id="tg" aria-pressed="true">Lights on</button>
 
 <main>
 <h1 id="ttl">Hollow Hour</h1>
 <p class="sub">Ghost stories the elders of Kudal told. Ask the ghost.</p>
 <div id="cards"><p>Loading the stories…</p></div>
 <details class="how"><summary>How this works</summary>
-<p>Each story was told by an elder and written down here. When you ask a ghost a question, the question and that one story are sent to an open model (Llama, served by Groq). The model is told to answer only from the story. If the story doesn’t say it, the ghost says so. This site does not save your questions.</p></details>
+<p>Each story was told by an elder and written down here. When you ask a ghost a question, the question and that one story are sent to an open-weight model (Llama or gpt-oss, served by Groq). The model is told to answer only from the story. If the story doesn’t say it, the ghost says so. This site does not save your questions.</p></details>
 </main>
 
 <script>
@@ -110,7 +110,7 @@ function tp(e){var p=e.touches[0];if(p)pos(p.clientX,p.clientY)}
 addEventListener('touchstart',tp,{passive:true});addEventListener('touchmove',tp,{passive:true});
 addEventListener('pointermove',function(e){if(e.pointerType!=='touch')pos(e.clientX,e.clientY)});
 addEventListener('resize',function(){W=innerWidth;H=innerHeight;S=Math.round(Math.max(W,H)*3);tl.style.width=tl.style.height=S+'px';apply()});
-$('tg').addEventListener('click',function(){var on=$('torch').style.display!=='none';$('torch').style.display=on?'none':'block';this.setAttribute('aria-pressed',String(!on));this.textContent=on?'Lights on':'Torch on'});
+$('tg').addEventListener('click',function(){var on=$('torch').style.display!=='none';$('torch').style.display=on?'none':'block';this.setAttribute('aria-pressed',String(!on));this.textContent=on?'Lights off':'Lights on'});
 function glitch(el){el.classList.remove('glitch');void el.offsetWidth;el.classList.add('glitch')}
 $('ttl').addEventListener('click',function(){glitch(this)});
 var T0=document.title;document.addEventListener('visibilitychange',function(){document.title=document.hidden?'Don’t look back…':T0});
@@ -122,7 +122,7 @@ function card(s,i){
  var a=el('article','card'),ns='http://www.w3.org/2000/svg';
  a.innerHTML='<svg class="cr" viewBox="0 0 92 92" fill="none" stroke="#8c1414" stroke-width="1.4" aria-hidden="true"><path d="'+CR[i%3]+'"/></svg>';
  a.appendChild(el('h2',0,s.title));a.appendChild(el('p','where',s.where));
- if(s.sample)a.appendChild(el('p','tag','Sample story, not from an elder yet'));
+ if(s.tag)a.appendChild(el('p','tag',s.tag));else if(s.sample)a.appendChild(el('p','tag','Sample story, not from an elder yet'));
  else if(s.told_by)a.appendChild(el('p','tag','Told by '+s.told_by));
  var t=Math.max(1,Math.min(5,s.terror||3)),sk=el('p','skulls');sk.setAttribute('role','img');sk.setAttribute('aria-label','Terror level '+t+' of 5');
  sk.appendChild(document.createTextNode('☠'.repeat(t)));if(t<5){var d=el('i',0,'☠'.repeat(5-t));sk.appendChild(d)}
