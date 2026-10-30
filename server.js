@@ -15,6 +15,11 @@ function loadStories() {
 
 app.get("/", (_req, res) => res.sendFile(path.join(__dirname, "index.html")));
 
+// Optional background music: add a file named ambient.mp3 next to this file.
+app.get("/ambient.mp3", (_req, res) =>
+  res.sendFile(path.join(__dirname, "ambient.mp3"), (err) => { if (err && !res.headersSent) res.status(404).end(); })
+);
+
 app.get("/api/stories", (_req, res) => {
   try {
     res.json(loadStories());
@@ -95,3 +100,4 @@ app.post("/api/ask", async (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000);
+                                                                         
