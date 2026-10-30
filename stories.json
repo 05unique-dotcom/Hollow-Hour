@@ -1,35 +1,5 @@
 [
   {
-    "id": "old-well",
-    "title": "The Old Well",
-    "where": "Behind the old school, Kudal",
-    "told_by": "Sample story",
-    "terror": 4,
-    "sample": true,
-    "text": "Behind the old school there is a dry well that nobody uses. On new-moon nights, children who passed it heard someone drawing water, although the well had no rope and no bucket. An old watchman once followed the sound and found wet footprints leading to the well. The footprints went in, but none came out. He never walked that path after dark again.",
-    "whisper": "Don’t look back."
-  },
-  {
-    "id": "peepal-voice",
-    "title": "The Voice Under the Peepal",
-    "where": "The village road, third watch of the night",
-    "told_by": "Sample story",
-    "terror": 3,
-    "sample": true,
-    "text": "A huge peepal tree stands where the village road bends. Travellers coming home late say a woman’s voice calls them by name from under it. The voice always sounds like someone they love. A farmer once answered, and his lantern went out. He reached home by morning, but he never spoke of what he heard.",
-    "whisper": "It already knows your name."
-  },
-  {
-    "id": "locked-room",
-    "title": "The Locked Room",
-    "where": "An old family house",
-    "told_by": "Sample story",
-    "terror": 5,
-    "sample": true,
-    "text": "In an old family house there is a room that has been locked for as long as anyone remembers. Every night the latch lifts by itself and the door opens a hand’s width. The family tried nailing it shut, but the nails were found on the floor in the morning. Nobody knows what is inside, because nobody who looked inside would talk about it.",
-    "whisper": "You didn’t close the door."
-  },
-  {
     "id": "seventh-lamp",
     "title": "The Seventh Lamp",
     "where": "The abandoned wada above the mango orchard",
@@ -68,5 +38,35 @@
     "sample": false,
     "text": "Fishermen on the creek follow one rule: never whistle on the water at night. A whistle calls the Boatman, a tall man in a wet black blanket who rows a boat without an oar and leaves no ripples behind it. He does not ask for money. His fare is one fish, the first one of the catch, thrown into his boat without speaking. If you pay him, he rows you to the far bank safely and fades into the mist. If you refuse, your own boat turns in circles until sunrise. A young fisherman named Bala whistled for fun in 1998 and paid the Boatman with a gold coin from his mother’s necklace. The Boatman smiled, took the coin, and did not row him to the bank. At dawn Bala’s boat was found floating empty with the gold coin lying in the water at the bottom. Since then the village leaves the first fish of every catch tied in a banana leaf on the shore on new-moon nights, so the Boatman never has to call for his fare.",
     "whisper": "Do not whistle."
+  },
+  {
+    "id": "old-well",
+    "title": "The Old Well",
+    "where": "Behind the old school, Kudal",
+    "tag": "Original fiction, a village ghost tale",
+    "terror": 4,
+    "sample": false,
+    "text": "Behind the old school there is a dry well that nobody uses. On new-moon nights, children who passed it heard someone drawing water, although the well had no rope and no bucket. An old watchman once followed the sound and found wet footprints leading to the well. The footprints went in, but none came out. He never walked that path after dark again.",
+    "whisper": "Don’t look back."
+  },
+  {
+    "id": "peepal-voice",
+    "title": "The Voice Under the Peepal",
+    "where": "The village road, third watch of the night",
+    "tag": "Original fiction, a village ghost tale",
+    "terror": 3,
+    "sample": false,
+    "text": "A huge peepal tree stands where the village road bends. Travellers coming home late say a woman’s voice calls them by name from under it. The voice always sounds like someone they love. A farmer once answered, and his lantern went out. He reached home by morning, but he never spoke of what he heard.",
+    "whisper": "It already knows your name."
+  },
+  {
+    "id": "locked-room",
+    "title": "The Locked Room",
+    "where": "An old family house",
+    "tag": "Original fiction, a village ghost tale",
+    "terror": 5,
+    "sample": false,
+    "text": "In an old family house there is a room that has been locked for as long as anyone remembers. Every night the latch lifts by itself and the door opens a hand’s width. The family tried nailing it shut, but the nails were found on the floor in the morning. Nobody knows what is inside, because nobody who looked inside would talk about it.",
+    "whisper": "You didn’t close the door."
   }
 ]
