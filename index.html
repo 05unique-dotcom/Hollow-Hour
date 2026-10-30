@@ -77,6 +77,8 @@ background:radial-gradient(circle closest-side,transparent 0,transparent 130px,#
 <body>
 <div id="gate"><h2>It is dark in there</h2><p>Sudden darkness, shadows at the edge of the screen and a frightening face will appear. Not for the faint of heart.</p>
 <button id="go">Enter</button><button id="soft" class="soft">Gentle mode (no jump scares)</button></div>
+<script>/* Safety net: Enter always opens the page, even if something later fails. */
+['go','soft'].forEach(function(i){document.getElementById(i).addEventListener('click',function(){var g=document.getElementById('gate');if(g)g.remove()})});</script>
 <div id="torch" aria-hidden="true"><div id="tl"></div></div><div id="blk" aria-hidden="true"></div>
 <div id="vig" aria-hidden="true"></div>
 <div id="eyes" aria-hidden="true"><span></span><span></span></div>
@@ -191,32 +193,8 @@ function gov(){setTimeout(function(){
 if(navigator.getBattery){navigator.getBattery().then(function(b){if(!b.charging&&b.level<.2)setLvl(1)}).catch(function(){})}
 function prog(){var h=document.documentElement.scrollHeight-innerHeight;return h>0?Math.min(1,scrollY/h):0}
 function calc(){var e=(Date.now()-t0)/1000;dread=Math.min(100,Math.max(dread,prog()*70+Math.min(30,e/3)));return dread}
-function go(s){
-  safe = s;
-  var gate = $('gate');
-  if (gate) gate.remove();
-
-  started = true;
-  t0 = Date.now();
-
-  Sfx.init();
-  beat();
-  tick();
-  spawn();
-  bleed();
-  dm();
-  shadow();
-  sg();
-  gov();
-}
-
-$('go').onclick = function(){
-  go(false);
-};
-
-$('soft').onclick = function(){
-  go(true);
-};
+function go(s){safe=s;$('gate').remove();started=true;t0=Date.now();Sfx.init();beat();tick();spawn();bleed();dm();shadow();sg();gov()}
+$('go').addEventListener('click',function(){go(false)});$('soft').addEventListener('click',function(){go(true)});
 function tick(){setInterval(function(){
  if(document.hidden)return;
  var d=calc(),m=safe?.5:1;hb.style.width=(100-d)+'%';
@@ -239,4 +217,37 @@ function face(){var r=function(a,b){return a+Math.random()*(b-a)},ri=function(a,
  if(m===0)s+='<path d="M'+(100-w)+' '+my+' Q100 '+(my+mh)+' '+(100+w)+' '+my+' Q100 '+(my+8)+' '+(100-w)+' '+my+'Z" fill="#000"/>';
  if(m===1){s+='<path d="M'+(100-w*1.2)+' '+my+' Q100 '+(my+mh*.55)+' '+(100+w*1.2)+' '+my+'" stroke="#000" stroke-width="6" fill="none"/>';for(var i=-4;i<=4;i++)s+='<path d="M'+(100+i*w*.26)+' '+(my+Math.abs(i)*1.2)+' l0 '+r(9,16)+'" stroke="#000" stroke-width="3"/>'}
  if(m===2)s+='<ellipse cx="100" cy="'+my+'" rx="'+r(10,16)+'" ry="'+r(16,30)+'" fill="#000"/>';
- if(m===3){s+='<path d="M'+(100-w)+' '+my+' L'+(100+w)+' '+my+'" stroke="#000" stroke-width="4"/>';for(var j=-5;j<=5;j++)s+='<path d="M'+(100+j*w/5.5)+' '+(my-9)+' l0 18" str
+ if(m===3){s+='<path d="M'+(100-w)+' '+my+' L'+(100+w)+' '+my+'" stroke="#000" stroke-width="4"/>';for(var j=-5;j<=5;j++)s+='<path d="M'+(100+j*w/5.5)+' '+(my-9)+' l0 18" stroke="#000" stroke-width="2.5"/>'}
+ if(Math.random()<.7)s+='<path d="M'+(100-gap)+' '+(ey+ery)+' l'+r(-6,6)+' '+r(40,80)+'" stroke="#000" stroke-width="4" fill="none"/>';
+ if(Math.random()<.7)s+='<path d="M'+(100+gap)+' '+(ey+ery)+' l'+r(-6,6)+' '+r(40,80)+'" stroke="#000" stroke-width="4" fill="none"/>';
+ if(Math.random()<.6)s+='<path d="M'+r(80,120)+' 36 L'+r(80,120)+' 66 L'+r(84,116)+' 90 L'+r(84,116)+' 104" stroke="#000" stroke-width="3.5" fill="none"/>';
+ var f=$('face');f.innerHTML=s;f.style.transform='rotate('+r(-9,9)+'deg)'}
+function jump(){scares++;face();scare.classList.add('on');Sfx.scare();
+ setTimeout(function(){scare.classList.remove('on')},scares===1?190:150)}
+function spawn(){setTimeout(function(){
+ if(!RM&&lvl<2&&!document.hidden){var x,y,n=0;do{x=20+Math.random()*(W-70);y=60+Math.random()*(H-120);n++}while(Math.hypot(x-tx,y-ty)<220&&n<8);
+  eyes.style.left=x+'px';eyes.style.top=y+'px';eX=x+13;eY=y;eyes.classList.add('on');
+  setTimeout(function(){eyes.classList.remove('on')},6000)}
+ spawn()},5000+Math.random()*5000)}
+function shadow(){setTimeout(function(){
+ if(!RM&&lvl<1&&!document.hidden&&dread>25){var left=Math.random()<.5,y=H*(.35+Math.random()*.4),near=Math.min(.4,dread/240),x=left?W*near*.5:W-W*near*.5-80;
+  sh.style.left=x+'px';sh.style.top=(y-110)+'px';sX=x+40;sY=y;sh.classList.add('on');
+  setTimeout(function(){sh.classList.remove('on')},7000)}
+ shadow()},15000+Math.random()*9000)}
+function dm(){setTimeout(function(){
+ if(!RM&&lvl<2&&!document.hidden&&dread>15){blk.style.opacity=1;Sfx.thud();
+  eyes.style.left=(tx-40)+'px';eyes.style.top=(ty+70)+'px';eX=tx;eY=ty+70;eyes.classList.add('on');
+  setTimeout(function(){blk.style.opacity=0},safe?250:380);
+  setTimeout(function(){eyes.classList.remove('on')},900)}
+ dm()},22000+Math.random()*16000)}
+function sg(){setTimeout(function(){
+ if(!RM&&!document.hidden&&dread>20){sig.style.opacity=1;setTimeout(function(){sig.style.opacity=0},500)}
+ sg()},35000+Math.random()*20000)}
+function bleed(){setTimeout(function(){
+ if(!document.hidden){var s=document.querySelectorAll('.story');if(s.length){var e=s[Math.floor(Math.random()*s.length)];
+  e.classList.add('bleed');Sfx.whisper();setTimeout(function(){e.classList.remove('bleed')},260)}}
+ bleed()},6000+Math.random()*5000)}
+})();
+</script>
+</body>
+</html>
