@@ -191,8 +191,32 @@ function gov(){setTimeout(function(){
 if(navigator.getBattery){navigator.getBattery().then(function(b){if(!b.charging&&b.level<.2)setLvl(1)}).catch(function(){})}
 function prog(){var h=document.documentElement.scrollHeight-innerHeight;return h>0?Math.min(1,scrollY/h):0}
 function calc(){var e=(Date.now()-t0)/1000;dread=Math.min(100,Math.max(dread,prog()*70+Math.min(30,e/3)));return dread}
-function go(s){safe=s;$('gate').remove();started=true;t0=Date.now();Sfx.init();beat();tick();spawn();bleed();dm();shadow();sg();gov()}
-$('go').addEventListener('click',function(){go(false)});$('soft').addEventListener('click',function(){go(true)});
+function go(s){
+  safe = s;
+  var gate = $('gate');
+  if (gate) gate.remove();
+
+  started = true;
+  t0 = Date.now();
+
+  Sfx.init();
+  beat();
+  tick();
+  spawn();
+  bleed();
+  dm();
+  shadow();
+  sg();
+  gov();
+}
+
+$('go').onclick = function(){
+  go(false);
+};
+
+$('soft').onclick = function(){
+  go(true);
+};
 function tick(){setInterval(function(){
  if(document.hidden)return;
  var d=calc(),m=safe?.5:1;hb.style.width=(100-d)+'%';
